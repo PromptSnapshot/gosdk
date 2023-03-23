@@ -2,7 +2,7 @@ package gosdk
 
 import (
 	"context"
-	"github.com/2110336-2565-2/cu-freelance-library/pkg/tracer"
+	"github.com/thinc-org/newbie-gosdk/pkg"
 	"go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc"
 	tr "go.opentelemetry.io/otel/trace"
 	"go.uber.org/zap"
@@ -10,7 +10,7 @@ import (
 	"time"
 )
 
-var tracerService tracer.Service
+var tracerService pkg.Service
 
 // NewGRPUnaryClientInterceptor returns unary client interceptor. It is used
 // with `grpc.WithUnaryInterceptor` method.
@@ -45,7 +45,7 @@ type JaegerConfig struct {
 // SetUpTracer set up the jaeger url and resource setting
 func SetUpTracer(conf *JaegerConfig) error {
 	logger, _ := NewLogger()
-	service, err := tracer.NewService(conf.Host, conf.Environment, conf.ServiceName)
+	service, err := pkg.NewTracerService(conf.Host, conf.Environment, conf.ServiceName)
 	if err != nil {
 		return err
 	}
