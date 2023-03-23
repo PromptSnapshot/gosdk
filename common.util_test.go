@@ -1,4 +1,4 @@
-package utils
+package gosdk
 
 import (
 	"github.com/stretchr/testify/suite"

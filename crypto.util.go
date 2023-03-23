@@ -1,4 +1,4 @@
-package utils
+package gosdk
 
 import (
 	"crypto/aes"
