@@ -52,7 +52,7 @@ func Decrypt(secret []byte, secure string) (decoded string, err error) {
 	iv := cipherText[:aes.BlockSize]
 	cipherText = cipherText[aes.BlockSize:]
 
-	stream := cipher.NewCFBEncrypter(block, iv)
+	stream := cipher.NewCFBDecrypter(block, iv)
 	stream.XORKeyStream(cipherText, cipherText)
 
 	return string(cipherText), err
