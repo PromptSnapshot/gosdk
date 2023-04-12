@@ -14,6 +14,10 @@ func UUIDAdr(in uuid.UUID) *uuid.UUID {
 	return &in
 }
 
+func IntAdr(in int) *int {
+	return &in
+}
+
 func GetCurrentTimePtr() *time.Time {
 	tmp := time.Now()
 	return &tmp
