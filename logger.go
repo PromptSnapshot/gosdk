@@ -10,8 +10,16 @@ import (
 	"time"
 )
 
+var Level = zapcore.InfoLevel
+
+func SetLogLevel(level zapcore.Level) {
+	Level = level
+}
+
 func NewLogger() (*zap.Logger, error) {
 	config := zap.NewProductionConfig()
+
+	config.Level = zap.NewAtomicLevelAt(Level)
 	config.EncoderConfig.EncodeTime = zapcore.TimeEncoderOfLayout(time.RFC3339Nano)
 	config.EncoderConfig.TimeKey = "time"
 
