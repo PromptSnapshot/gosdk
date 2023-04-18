@@ -12,13 +12,19 @@ import (
 
 var Level = zapcore.InfoLevel
 
-func SetLogLevel(level zapcore.Level) {
-	Level = level
+func SetLogLevel(level string) error {
+	l, err := zapcore.ParseLevel(level)
+	if err != nil {
+		return err
+	}
+
+	Level = l
+
+	return nil
 }
 
 func NewLogger() (*zap.Logger, error) {
 	config := zap.NewProductionConfig()
-
 	config.Level = zap.NewAtomicLevelAt(Level)
 	config.EncoderConfig.EncodeTime = zapcore.TimeEncoderOfLayout(time.RFC3339Nano)
 	config.EncoderConfig.TimeKey = "time"
