@@ -2,7 +2,7 @@ package pkg
 
 import (
 	"context"
-	"github.com/thinc-org/newbie-gosdk/internal"
+	"github.com/PromptSnapshot/gosdk/internal"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/attribute"
 	jg "go.opentelemetry.io/otel/exporters/jaeger"

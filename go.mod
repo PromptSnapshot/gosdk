@@ -1,4 +1,4 @@
-module github.com/thinc-org/newbie-gosdk
+module github.com/PromptSnapshot/gosdk
 
 go 1.20
 

@@ -2,7 +2,7 @@ package gosdk
 
 import (
 	"context"
-	"github.com/thinc-org/newbie-gosdk/pkg"
+	"github.com/PromptSnapshot/gosdk/pkg"
 	"go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc"
 	tr "go.opentelemetry.io/otel/trace"
 	"go.uber.org/zap"
